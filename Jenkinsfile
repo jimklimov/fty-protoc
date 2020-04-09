@@ -1,5 +1,5 @@
 pipeline {
-	agent { label "devel-image && x86_64" }
+	agent { label "devel-image && x86_64 && OSIMAGE_DISTRO=Debian_10.0" }
 
 	parameters {
 		booleanParam name: 'RUN_TESTS', defaultValue: true, description: 'Run Tests?'

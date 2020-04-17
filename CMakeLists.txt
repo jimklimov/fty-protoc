@@ -24,9 +24,10 @@ raven_target(exe ${PROJECT_NAME}
     PREPROCESSOR
         -DPROTOBUF_USE_DLLS
     USES
-    #protobuf::libprotobuf
-    #   protobuf::libprotoc
-    protobuf
+        #protobuf::libprotobuf
+        #   protobuf::libprotoc
+        protobuf
+        protoc
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME protoc-gen-fty)

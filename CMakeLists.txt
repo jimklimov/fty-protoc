@@ -3,6 +3,9 @@ cmake_policy(VERSION 3.10)
 
 find_package(raven-cmake QUIET PATHS ${CMAKE_BINARY_DIR})
 
+# Also needs google protobuf, but it is not packaged with CMake
+#!BuildRequires: find_package(protobuf QUIET PATHS ${CMAKE_BINARY_DIR})
+
 project(fty-protoc VERSION 1.0.0)
 
 raven_target(exe ${PROJECT_NAME}

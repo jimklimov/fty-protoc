@@ -3,7 +3,8 @@ pipeline {
 
     parameters {
         booleanParam name: 'RUN_TESTS', defaultValue: true, description: 'Run Tests?'
-        booleanParam name: 'RUN_MEMCHECKS', defaultValue: true, description: 'Run memchecks?'
+        // Reenable after adding the test config files
+        booleanParam name: 'RUN_MEMCHECKS', defaultValue: false, description: 'Run memchecks?'
 
         // Extra for Eaton CI
         // Use DEFAULT_DEPLOY_BRANCH_PATTERN and DEFAULT_DEPLOY_JOB_NAME if

@@ -33,6 +33,20 @@ pipeline {
             name: 'DO_CLEANUP_AFTER_FAILED_JOB')
     }
 
+    triggers {
+        pollSCM 'H/2 * * * *'
+    }
+
+    // Jenkins tends to reschedule jobs that have not yet completed if they took
+    // too long, maybe this happens in combination with polling. Either way, if
+    // the server gets into this situation, the snowball of same builds grows as
+    // the build system lags more and more. Let the devs avoid it in a few ways.
+    options {
+        disableConcurrentBuilds()
+    }
+// Note: your Jenkins setup may benefit from similar setup on side of agents:
+//        PATH="/usr/lib64/ccache:/usr/lib/ccache:/usr/bin:/bin:${PATH}"
+
     stages {
         stage('Build') {
             steps {

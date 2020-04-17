@@ -1,0 +1,13 @@
+# Note: the 42ity for of protobuf, with a protoc.pc file, is required below
+
+Source: fty-protoc
+Maintainer: Clement Perrette <clementperrette@eaton.com>
+Build-Depends: cmake (>=3.0), debhelper (>= 9), pkg-config, raven-cmake-dev, libprotobuf-dev
+Standards-Version: 1.0.0
+Section: devel
+Priority: extra
+
+Package: fty-protoc-dev
+Architecture: any
+Depends: ${misc:Depends}
+Description: Protobuf extention plugging for pack library

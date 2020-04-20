@@ -196,6 +196,9 @@ std::string ClassGenerator::cppType(const FieldDescriptor* fld) const
             return isList ? "pack::ObjectList<" + name + ">" : name;
         }
     }
+
+    // Should not get here, so value below "should be" irrelevant
+    return "null";
 }
 
 } // namespace google::protobuf::compiler::fty
